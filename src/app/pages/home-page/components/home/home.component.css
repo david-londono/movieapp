@@ -1,0 +1,48 @@
+.main {
+    padding: 20px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.empty {
+    text-align: center;
+    width: 100%;
+}
+
+.mat-card {
+    margin: 10px 0;
+    width: 15%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+.mat-card:hover {
+    transform: scale(1.05);
+    z-index: 100;
+}
+
+.mat-card-title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mat-card-subtitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.search {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}

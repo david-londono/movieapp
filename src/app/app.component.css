@@ -1,0 +1,22 @@
+.menu-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.sidenav {
+    width:250px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.container {
+    height: 100vh;
+}
+
+.button {
+    float: right;
+}

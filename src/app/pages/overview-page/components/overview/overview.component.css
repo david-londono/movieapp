@@ -1,0 +1,35 @@
+.mat-card {
+    margin: 20px;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.mat-card-image:first-child {
+    margin-top: 0;
+}
+
+.mat-card-image {
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.mat-card-content {
+    display: flex;
+}
+
+.image {
+    display: inline-flex;
+    max-width: 300px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mat-raised-button {
+    width: 175px;
+}

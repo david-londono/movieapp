@@ -1,0 +1,41 @@
+
+
+<mat-drawer-container class="container" autosize>
+
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-nav-list>
+      <a [routerLink]="['/home']" href="#" mat-list-item>
+        <span mat-line>Home</span>
+        <span mat-line>Search movie</span>
+      </a>
+    
+      <a [routerLink]="['/fav']" href="#" mat-list-item>
+        <span mat-line>Favorite films</span>
+        <span mat-line>See your list</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-toolbar class="menu-bar" color="primary">
+    <button mat-icon-button (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-icon>videocam</mat-icon>
+    <span class="content">Movie App</span>
+    <span class="spacer"></span>
+    <a mat-icon-button class="favorite-icon" [routerLink]="['/fav']">
+      <mat-icon>favorite</mat-icon>
+    </a>
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+  </mat-toolbar>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</mat-drawer-container>
+
+
+
+

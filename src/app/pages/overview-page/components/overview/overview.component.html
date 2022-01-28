@@ -1,0 +1,27 @@
+<mat-card *ngIf="movie">
+    <mat-card-content>
+        <div class="image">
+            <img 
+                mat-card-image 
+                [src]="baseImgUrl + movie?.backdrop_path" 
+                onError="this.src='./assets/img/404.png';"
+                alt="Photo of {{movie?.title}}" />
+        </div>
+        <div class="content">
+            <mat-card-title> {{movie.title}}</mat-card-title>
+            <mat-card-subtitle>{{movie.tagline}}</mat-card-subtitle>
+            <br>
+            <mat-chip-list aria-label="Genres">
+                <mat-chip *ngFor="let chip of movie.genres" color="primary" selected>{{chip.name}}</mat-chip>
+            </mat-chip-list>
+            <br>
+            <p>{{movie.overview}}</p>
+            <p>Release: {{movie.release_date}}</p>
+            <p *ngIf="movie.homepage">website: <a [href]="movie.homepage" target="_blank">{{movie.homepage}}</a></p>
+            <button mat-raised-button (click)="toggleFavorite(movie)" color="accent">
+                <mat-icon>{{!isAdded ? 'favorite_border' : 'favorite'}}</mat-icon>
+                {{!isAdded ? 'Add To Favorites' : 'Added to favorites'}}
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>
