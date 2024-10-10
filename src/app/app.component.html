@@ -1,8 +1,8 @@
 
 
-<mat-drawer-container class="container" autosize>
+<mat-drawer-container class="container" [hasBackdrop]="true" autosize>
 
-  <mat-drawer #drawer class="sidenav" mode="side">
+  <mat-drawer #drawer class="sidenav" mode="over">
     <mat-nav-list>
       <a [routerLink]="['/home']" href="#" mat-list-item>
         <span mat-line>Home</span>
@@ -26,9 +26,6 @@
     <a mat-icon-button class="favorite-icon" [routerLink]="['/fav']">
       <mat-icon>favorite</mat-icon>
     </a>
-    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button> -->
   </mat-toolbar>
 
   <main>
