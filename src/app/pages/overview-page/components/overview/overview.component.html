@@ -1,7 +1,7 @@
-<mat-card *ngIf="movie">
-    <mat-card-content>
+<mat-card class="mat-card" *ngIf="movie">
+    <mat-card-content class="mat-card-content">
         <div class="image">
-            <img 
+            <img class="mat-card-image" 
                 mat-card-image 
                 [src]="baseImgUrl + movie?.backdrop_path" 
                 onError="this.src='./assets/img/404.png';"
@@ -11,9 +11,9 @@
             <mat-card-title> {{movie.title}}</mat-card-title>
             <mat-card-subtitle>{{movie.tagline}}</mat-card-subtitle>
             <br>
-            <mat-chip-list aria-label="Genres">
+            <mat-chip-listbox aria-label="Genres">
                 <mat-chip *ngFor="let chip of movie.genres" color="primary" selected>{{chip.name}}</mat-chip>
-            </mat-chip-list>
+            </mat-chip-listbox>
             <br>
             <p>{{movie.overview}}</p>
             <p>Release: {{movie.release_date}}</p>
