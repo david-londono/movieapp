@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { MovieService } from './movie.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +10,7 @@ export class AppComponent {
   title = 'movieapp';
   favorites: any;
 
-  constructor(
-    private router: Router) {
+  constructor() {
       const fav: any = localStorage.getItem('favorites');
 
       if (fav && fav.length) {
