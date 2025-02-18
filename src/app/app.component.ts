@@ -12,13 +12,11 @@ export class AppComponent {
 
   constructor() {
       const fav: any = localStorage.getItem('favorites');
-
       if (fav && fav.length) {
         this.favorites = JSON.parse(fav);
       } else {
         this.favorites = []
       }
-      console.log(this.favorites);
       localStorage.setItem('favorites',  JSON.stringify(this.favorites));
   }
 }
