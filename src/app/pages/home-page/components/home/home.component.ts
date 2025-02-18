@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/movie.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,33 +9,26 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent {
   showFiller = true;
-  movieList: any[] = [];
   movie = '';
   baseImgUrl = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2';
   favorites: any;
+  public movie2$?: Observable<any>
 
   constructor(
     private movieService: MovieService,
     private router: Router) { }
 
-  ngOnInit(): void {
+  isFavorite(movie: string) {
+    let fav: any = localStorage.getItem('favorites');
+    fav = JSON.parse(fav);
+    console.log(fav)
+    return fav.find((item: any) => movie === item.title) ? true : false;
   }
 
   search(event: any) {
-    let fav: any = localStorage.getItem('favorites');
-    fav = JSON.parse(fav);
-    this.movieService.getMovieSearch(event).subscribe((res: any) => {
-      this.movieList = res.results;
-      this.movieList.forEach((el: any) => {
-        const isAdded = fav.find((item: any) => el.title === item.title);
-        if (isAdded) {
-          el.favorite = true;
-        }
-      });
-    });
+    this.movie2$ = this.movieService.getMovieSearch(event);
   }
 
   goToOverview(movie: any) {
@@ -44,7 +38,6 @@ export class HomeComponent implements OnInit {
   addToFavorites(movie: any) {
     this.favorites = localStorage.getItem('favorites');
     this.favorites = JSON.parse(this.favorites);
-    
     if (this.favorites && this.favorites.length) {
       this.favorites.forEach((el: any, index: number) => {
         if (el.title === movie.title) {
