@@ -3,6 +3,8 @@
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .mat-card-image:first-child {

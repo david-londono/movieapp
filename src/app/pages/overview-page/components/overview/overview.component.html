@@ -16,7 +16,7 @@
             </mat-chip-listbox>
             <br>
             <p>{{movie.overview}}</p>
-            <p>Release: {{movie.release_date}}</p>
+            <p>Release: {{movie.release_date | date:"fullDate"}}</p>
             <p *ngIf="movie.homepage">website: <a [href]="movie.homepage" target="_blank">{{movie.homepage}}</a></p>
             <button mat-raised-button (click)="toggleFavorite(movie)" color="accent">
                 <mat-icon>{{!isAdded ? 'favorite_border' : 'favorite'}}</mat-icon>
