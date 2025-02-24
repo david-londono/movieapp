@@ -19,4 +19,8 @@ export class AppComponent {
       }
       localStorage.setItem('favorites',  JSON.stringify(this.favorites));
   }
+
+  search(e: any) {
+    console.log(e);
+  }
 }

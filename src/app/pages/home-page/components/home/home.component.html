@@ -1,13 +1,6 @@
 <div class="search">
-    <mat-form-field class="example-form-field" appearance="fill">
-      <mat-label>Search a Movie</mat-label>
-      <input matInput type="text" (keyup)="search(movie)" [(ngModel)]="movie">
-      <button matSuffix mat-icon-button aria-label="Clear" (click)="search(movie)">
-        <mat-icon>search</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
-
+    <app-search (outputSearch)="search($event)"></app-search>
+</div>
 
 <section class="main">
     @for (movie of (movie2$ | async)?.results; track movie) {

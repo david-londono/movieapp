@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/movie.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -23,7 +24,6 @@ export class HomeComponent {
   isFavorite(movie: string) {
     let fav: any = localStorage.getItem('favorites');
     fav = JSON.parse(fav);
-    console.log(fav)
     return fav.find((item: any) => movie === item.title) ? true : false;
   }
 
