@@ -15,8 +15,8 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieSearch(movie: any) {
-    return this.http.get<any>(`${this.url.search}?api_key=${this.token}&query=${movie}`);
+  getMovieSearch(movie: string) {
+    return this.http.get(`${this.url.search}?api_key=${this.token}&query=${movie}`);
   }
 
   getMovieOverview(id: number) {

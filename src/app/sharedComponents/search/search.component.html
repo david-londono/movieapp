@@ -1,1 +1,7 @@
-<p>search works!</p>
+<mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Search a Movie</mat-label>
+    <input matInput type="text" (keyup)="search(movie)" [(ngModel)]="movie">
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="search(movie)">
+        <mat-icon>search</mat-icon>
+    </button>
+</mat-form-field>

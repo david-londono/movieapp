@@ -20,7 +20,7 @@
     <mat-icon>videocam</mat-icon>
     <span class="content">Movie App</span>
     <span class="spacer"></span>
-    <!-- Add search bar when in not at home page -->
+    <app-search (outputSearch)="search($event)"></app-search>
     <a mat-icon-button class="favorite-icon" [routerLink]="['/fav']">
       <mat-icon>favorite</mat-icon>
     </a>
