@@ -20,7 +20,9 @@
     <mat-icon>videocam</mat-icon>
     <span class="content">Movie App</span>
     <span class="spacer"></span>
-    <app-search (outputSearch)="search($event)"></app-search>
+    @if (!router.url.includes('home')) {
+      <app-search (outputSearch)="search($event)"></app-search>
+    }
     <a mat-icon-button class="favorite-icon" [routerLink]="['/fav']">
       <mat-icon>favorite</mat-icon>
     </a>

@@ -1,6 +1,5 @@
-import { Component, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MovieService } from 'src/app/movie.service';
 
 @Component({
   selector: 'app-search',
@@ -9,14 +8,17 @@ import { MovieService } from 'src/app/movie.service';
 })
 export class SearchComponent {
   public movie2$?: Observable<any>
+  origin = input('');
   movie = '';
   outputSearch = output(); 
 
-  constructor(private movieService: MovieService) {}
+  constructor() {}
 
   search(event: any) {
     //this.movie2$ = this.movieService.getMovieSearch(event);
-    this.outputSearch.emit(event)
+    if (this.origin() === 'home') {
+      this.outputSearch.emit(event)
+    }
   }
 
 }
