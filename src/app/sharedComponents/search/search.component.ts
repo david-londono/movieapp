@@ -19,6 +19,8 @@ export class SearchComponent {
     if (this.origin() === 'home') {
       this.outputSearch.emit(event)
     }
+
+    this.outputSearch.emit(event)
   }
 
 }
