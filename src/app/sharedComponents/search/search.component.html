@@ -2,6 +2,6 @@
     <mat-label>Search a Movie</mat-label>
     <input matInput type="text" (keyup)="search(movie)" [(ngModel)]="movie">
     <button matSuffix mat-icon-button aria-label="Clear" (click)="search(movie)">
-        <mat-icon>search</mat-icon>
+        <mat-icon [ngClass]="origin() === 'home' ? '' : 'black'">search</mat-icon>
     </button>
 </mat-form-field>

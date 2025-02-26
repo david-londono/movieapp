@@ -1,3 +1,7 @@
 .example-form-field {
     margin-top: 22px;
 }
+
+.black {
+    color: gray !important;
+}
