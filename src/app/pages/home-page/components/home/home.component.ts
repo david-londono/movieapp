@@ -1,8 +1,7 @@
 import { Component, input, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/movie.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { HttpResponse } from '@angular/common/http';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   showFiller = true;
   movie = '';
   baseImgUrl = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2';
@@ -19,7 +18,15 @@ export class HomeComponent {
 
   constructor(
     private movieService: MovieService,
-    private router: Router) { }
+    private router: Router,
+    private ActivatedRoute: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {
+    this.ActivatedRoute.params.subscribe(params => {
+      this.movie = params['movie'];
+    })
+  }
 
   isFavorite(movie: string) {
     let fav: any = localStorage.getItem('favorites');

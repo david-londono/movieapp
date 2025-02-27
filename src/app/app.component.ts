@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { trigger, transition, style, animate, query, group } from '@angular/animations';
 import { animations } from './animations';
+import {Breakpoints} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
