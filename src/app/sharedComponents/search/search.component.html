@@ -1,6 +1,6 @@
 <mat-form-field class="example-form-field" appearance="fill">
     <mat-label>Search a Movie</mat-label>
-    <input matInput type="text" (keyup)="search(movie)" [(ngModel)]="movie">
+    <input matInput type="text" [formControl]="movie">
     <button matSuffix mat-icon-button aria-label="Clear" (click)="search(movie)">
         <mat-icon [ngClass]="origin() === 'home' ? '' : 'black'">search</mat-icon>
     </button>

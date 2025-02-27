@@ -7,6 +7,10 @@ const routes: Routes = [
         loadChildren: () =>  import('../pages/home-page/home-page.module').then(m => m.HomeModule),
         data: {animation: 'HomePage'}
     },
+    { path: 'home/:movie', 
+        loadChildren: () =>  import('../pages/home-page/home-page.module').then(m => m.HomeModule),
+        data: {animation: 'HomePage'}
+    },
     { path: 'fav', 
         loadChildren: () =>  import('../pages/fav-page/fav-page.module').then(m => m.FavModule),
         data: {animation: 'fav'}
